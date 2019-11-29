@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.source_files = "MBProgressHUD/*.{h,m}"
   s.dependency "SVProgressHUD"
   s.resource_bundles = {
-     'MBProgressHUD' => ['MBProgressHUD/Assets/*']
+    'Resource' => ['iOS_module_progressHUD/Assets/Resource/*.png']
   }
 end

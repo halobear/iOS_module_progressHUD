@@ -6,7 +6,6 @@
 //
 
 #import "MBProgressHUD+Add.h"
-#import "HBInvitation-Swift.h"
 
 @implementation MBProgressHUD (Add)
 
