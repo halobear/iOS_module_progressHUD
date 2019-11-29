@@ -39,12 +39,16 @@
     hud.removeFromSuperViewOnHide = YES;
     hud.dimBackground = NO;
     
-   NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
+    NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
+                                stringByAppendingPathComponent:@"/MBProgressHUD.bundle"];
    NSMutableArray *array = [NSMutableArray array];
    for (NSUInteger i = 0; i < 21 ; i++) {
-       NSString *path = [currentBundle pathForResource:[NSString stringWithFormat:@"loading_00%zd", i] ofType:nil inDirectory:@"MBProgressHUD.bundle"];
-       [array addObject:ImageNamed(path)];
-   }
+       NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
+       UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"loading_00%zd", i]
+                                          inBundle:resource_bundle
+                     compatibleWithTraitCollection:nil];
+       [array addObject:image];
+    }
     UIImageView *cusImageV = [[UIImageView alloc] init];
     cusImageV.animationImages = array;
     cusImageV.animationDuration = 0.8;
