@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/halobear/iOS_module_progressHUD.git", :tag => "#{s.version}" }
   s.requires_arc = true
-  s.source_files = "MBProgressHUD/*.{h,m}"
-  s.dependency "SVProgressHUD"
+  s.source_files = MBProgressHUD
+  s.dependency 'SVProgressHUD'
   s.resource_bundles = {
     'MBProgressHUD' => ['MBProgressHUD/Assets/*.xcassets']
   }
